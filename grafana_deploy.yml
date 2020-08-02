@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-grafana
+
+
+
+
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+
+
+
+
+  template:
+    metadata:
+      name: dep-grafana
+      labels:
+        app: grafana
+
+
+    spec:
+      volumes:
+        - name: storage-grafana
+          persistentVolumeClaim:
+            claimName: pv-claim-grafana
+
+
+      containers:
+        - name: grafana
+          image: vimal13/grafana
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: "/var/lib/grafana"
+              name: storage-grafana
+
+
+      restartPolicy: Always

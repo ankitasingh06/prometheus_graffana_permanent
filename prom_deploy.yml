@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-prometheus
+
+
+
+
+spec:
+   selector:
+    matchLabels:
+      app: prometheus
+
+
+
+
+   template:
+    metadata:
+      name: dep-prometheus
+      labels:
+        app: prometheus
+
+
+
+
+    spec:
+      volumes:
+        - name: storage-prometheus
+          persistentVolumeClaim:
+            claimName: pv-claim-prometheus
+
+
+      containers:
+        - name: prometheus
+          image: vimal13/prometheus:v1
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: "/prometheus"
+              name: storage-prometheus
+      restartPolicy: Always
