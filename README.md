@@ -4,6 +4,8 @@ Hello reader!!
 
 •Aim:-This task is based on making the content of prometheus and grafana permanent
 
+![image-blog-monitoring-java-applications-with-prometheus-and-grafana-part-2](https://user-images.githubusercontent.com/60088271/89269057-043fa480-d657-11ea-850d-62f9555d61d0.jpg)
+
 •Theory:-
 ‣ Prometheus:- Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud.  It is now a standalone open source project and maintained independently of any company. To emphasize this, and to clarify the project's governance structure.Prometheus works well for recording any purely numeric time series. It fits both machine-centric monitoring as well as monitoring of highly dynamic service-oriented architectures. In a world of microservices, its support for multi-dimensional data collection and querying is a particular strength.
 
